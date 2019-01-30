@@ -5,7 +5,7 @@
     по умолчанию эти изменения выключены
     что бы их использовать => use strict  
     !! Применяется либо ко всем скрипту либо к отдельным ф-циям
-    - Examples: 
+    - Examples:
         - Объявление без var:
         ```
             "use strict"  
@@ -19,6 +19,11 @@
                 fn smth() { return this } => undefined  
             "no use strict"     
                 fn smth() { return this } => window / global
+- Приведение типов: 
+    - new Number(2) === 2
+    - new Number(2) == 2
+    - { a: 1 } === { a: 2 }
+    - { a: 1 } == { a: 2 }
 - типы данных
     - 7 типов данных:
     - object
@@ -456,7 +461,7 @@
     4) import a from '.....' // default export
 - CommonJS  
     module.exports.fn = () => { .... }  
-    =>  const someLibrary = require('...')    
+    =>  const someLibrary = require('...')
     someLibrary.fn = () => { ... }  
     or  
     module.exports = () => { ... }  
@@ -469,19 +474,19 @@
     => error while parsing  
     commonjs - динамическое определение пути на стадии работы программы  
     => error ar runtime  
-    2) syntax differences   
+    2) syntax differences
     3) loading techniques  
     commonJs - make a wraper  
     es6 - create "Module Record" object with links to imported instances  
 - псевдомассив arguments
-    properties:   
+    properties:
         - length  
         - calle - ссылка на ф-цию которая вызвала данную  
         - indexes  
         ```__proto__``` == Object !!! not Array
 - модуль - это  
     выделенная по функциональности часть кода
-- Stateless module   
+- Stateless module
     для константных аргументов константный результат
 - function vs () => {}  
     arrow - has not own this  
