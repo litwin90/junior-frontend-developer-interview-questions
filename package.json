@@ -1,0 +1,23 @@
+{
+  "name": "junior-frontend-developer-interview-questions",
+  "version": "1.0.0",
+  "description": "Вопросы на собесах",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./test/**.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svoboda-rabstvo/junior-frontend-developer-interview-questions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/svoboda-rabstvo/junior-frontend-developer-interview-questions/issues"
+  },
+  "homepage": "https://github.com/svoboda-rabstvo/junior-frontend-developer-interview-questions#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
