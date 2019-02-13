@@ -1,8 +1,19 @@
 const mocha = require('mocha');
 const assets = require('chai').assert;
-const dataTypes = require('../self-study/practics/dataStructures');
+const dataTypes = require('../src/practics/dataStructures');
 
-const { Stack, Queue, MyDoubleLinkedList, Heap, MyArray, LinkedList, MySet, MyMap, BinaryThree, FunctionComposer } = dataTypes;
+const {
+    Stack,
+    Queue,
+    MyDoubleLinkedList,
+    Heap,
+    MyArray,
+    LinkedList,
+    MySet,
+    MyMap,
+    BinaryThree,
+    functionComposer,
+} = dataTypes;
 
 describe('Data types', () => {
     describe('Binart Three Search', () => {
@@ -22,7 +33,7 @@ describe('Data types', () => {
             binaryThree.add(2);
             binaryThree.add(3);
             assets.equal(binaryThree.has(1), true);
-        })
+        });
 
         it('remove', () => {
             const binaryThree = new BinaryThree();
@@ -34,7 +45,7 @@ describe('Data types', () => {
             assets.equal(binaryThree.has(4), true);
             binaryThree.remove(4);
             assets.equal(binaryThree.has(4), false);
-        })
+        });
 
         it('min', () => {
             const binaryThree = new BinaryThree();
@@ -44,7 +55,7 @@ describe('Data types', () => {
             binaryThree.add(6);
             binaryThree.add(3);
             assets.equal(binaryThree.min(), 1);
-        })
+        });
 
         it('max', () => {
             const binaryThree = new BinaryThree();
@@ -54,8 +65,8 @@ describe('Data types', () => {
             binaryThree.add(6);
             binaryThree.add(3);
             assets.equal(binaryThree.max(), 6);
-        })
-    })
+        });
+    });
     describe('Set', () => {
         it('set', () => {
             const set = new MySet();
@@ -65,69 +76,68 @@ describe('Data types', () => {
 
         it('get', () => {
             const set = new MySet();
-            set.set('1')
+            set.set('1');
             assets.equal(set.get('1'), '1');
-        })
+        });
         it('delete', () => {
             const set = new MySet();
             set.set('1');
             assets.equal(set.get('1'), '1');
             set.remove('1');
             assets.equal(set.length(), 0);
-        })
+        });
         it('has', () => {
             const set = new MySet();
             set.set('2');
             assets.equal(set.has('2'), true);
-        })
-    })
+        });
+    });
     describe('Map', () => {
         it('has', () => {
             const map = new MyMap();
             map.set('2', 'sss');
             assets.equal(map.has('2'), true);
-        })
+        });
         it('set', () => {
             const map = new MyMap();
             map.set('2', 'sss');
             assets.equal(map.has('2'), true);
-        })
+        });
         it('get', () => {
             const map = new MyMap();
             map.set('2', 'sss');
             assets.equal(map.get('2'), 'sss');
-        })
-        
+        });
         it('delete', () => {
             const map = new MyMap();
             map.set('2', 'sss');
             assets.equal(map.has('2'), true);
             map.delete('2');
             assets.equal(map.has('2'), false);
-        })     
+        });
         it('Values', () => {
             const map = new MyMap();
             map.set('2', 'sss');
             assets.deepEqual(map.values(), [['sss']]);
-        })  
+        });
         it('Keys', () => {
             const map = new MyMap();
             map.set('2', 'sss');
             assets.deepEqual(map.keys(), ['2']);
-        }) 
-    })
-    describe('Double linked list',() => {
+        });
+    });
+    describe('Double linked list', () => {
         describe('add', () => {
             const doubleLinked = new MyDoubleLinkedList();
             it('Empty', () => {
                 doubleLinked.add(1);
                 assets.equal(doubleLinked.length, 1);
-            })
+            });
             it('No empty', () => {
                 doubleLinked.add(2);
                 assets.equal(doubleLinked.length, 2);
-            })
-        })
+            });
+        });
 
         // describe('insert', () => {
         //     const linked = new DoubleLinkedList();
@@ -177,25 +187,22 @@ describe('Data types', () => {
         //         assets.equal(linked.remove(-20), false);
         //     })
         // })
-    })
+    });
     describe('Linked List', () => {
-      
         describe('Add', () => {
             it('Empty', () => {
                 const linked = new LinkedList();
                 linked.add(1);
                 assets.equal(linked.length, 1);
-            })
+            });
             it('No empty', () => {
                 const linked = new LinkedList();
                 linked.add(1);
                 linked.add(2);
                 assets.equal(linked.length, 2);
-            })
-        })
-
+            });
+        });
         describe('Remove', () => {
-          
             it('First elem', () => {
                 const linked = new LinkedList();
                 linked.add(1);
@@ -203,7 +210,6 @@ describe('Data types', () => {
                 linked.remove(0);
                 assets.equal(linked.length, 1);
             });
-
             it('Last elem', () => {
                 const linked = new LinkedList();
                 linked.add(1);
@@ -223,7 +229,7 @@ describe('Data types', () => {
                 const linked = new LinkedList();
                 assets.equal(linked.remove(20), false);
             });
-        })
+        });
 
         describe('Insert', () => {
             it('In head', () => {
@@ -232,14 +238,14 @@ describe('Data types', () => {
                 linked.add(2);
                 linked.insert(0, 3);
                 assets.equal(linked.length, 3);
-            })
+            });
             it('In tail', () => {
                 const linked = new LinkedList();
                 linked.add(1);
                 linked.add(2);
                 linked.insert(1, 3);
                 assets.equal(linked.length, 3);
-            })
+            });
             it('In middle', () => {
                 const linked = new LinkedList();
                 linked.add(1);
@@ -249,113 +255,111 @@ describe('Data types', () => {
                 linked.insert(1, 4);
                 assets.equal(linked.length, 4);
                 assets.equal(linked.head.next.value, 4);
-            })
+            });
             it('Out of range', () => {
                 const linked = new LinkedList();
                 linked.add(1);
-                assets.equal(linked.insert(20), false)
-            })
+                assets.equal(linked.insert(20), false);
+            });
         });
     });
-    describe('Stack', () => {  
-    
+    describe('Stack', () => {
         it('Empty', () => {
             const stack = new Stack();
             assets.deepEqual(stack.items, []);
         });
-      
-        it('Add 1 .. 3', () => { 
+        it('Add 1 .. 3', () => {
             const stack = new Stack();
             stack.push(1);
             stack.push(2);
             stack.push(3);
-            assets.deepEqual(stack.items, [1,2,3])
+            assets.deepEqual(stack.items, [1, 2, 3]);
         });
-     
         it('Remove', () => {
             const stack = new Stack();
             stack.push(1);
             stack.push(2);
             stack.push(3);
             stack.pop();
-            assets.deepEqual(stack.items, [1, 2])
+            assets.deepEqual(stack.items, [1, 2]);
         });
-    })
+    });
 
     describe('Heap', () => {
-        it('empty', () => { 
+        it('empty', () => {
             const queue = new Heap();
-            assets.deepEqual(queue.items, [])
+            assets.deepEqual(queue.items, []);
         });
-       
         it('add 1 .. 3', () => {
             const queue = new Heap();
-            queue.add(1)
-            queue.add(2)
+            queue.add(1);
+            queue.add(2);
             queue.add(3);
-            assets.deepEqual(queue.items, [,1,2,3])
-        })
+            assets.deepEqual(queue.items, [, 1, 2, 3]);
+        });
         it('removeFirst', () => {
             const queue = new Heap();
-            queue.add(1)
-            queue.add(2)
+            queue.add(1);
+            queue.add(2);
             queue.add(3);
             queue.removeFirst();
-            assets.deepEqual(queue.items, [,2,3])
-        })
-    })
-    describe('Queue', () => {
-        it('empty', () => { 
-            const queue = new Queue();
-            assets.deepEqual(queue.items, [])
+            assets.deepEqual(queue.items, [, 2, 3]);
         });
-       
+    });
+    describe('Queue', () => {
+        it('empty', () => {
+            const queue = new Queue();
+            assets.deepEqual(queue.items, []);
+        });
         it('add 1 .. 3', () => {
             const queue = new Queue();
-            queue.add(1)
-            queue.add(2)
+            queue.add(1);
+            queue.add(2);
             queue.add(3);
-            assets.deepEqual(queue.items, [1,2,3])
-        })
+            assets.deepEqual(queue.items, [1, 2, 3]);
+        });
         it('remove', () => {
             const queue = new Queue();
-            queue.add(1)
-            queue.add(2)
+            queue.add(1);
+            queue.add(2);
             queue.add(3);
             queue.remove();
-            assets.deepEqual(queue.items, [2,3])
-        })
-    })
+            assets.deepEqual(queue.items, [2, 3]);
+        });
+    });
 
     describe('Function composer', () => {
         it('check', () => {
-            const greet = function(name){ return "hi: " + name; };
-            const exclaim = function(statement){ return statement.toUpperCase() + "!"; };
-            const welcome = FunctionComposer(greet, exclaim);
+            const greet = function(name) {
+                return 'hi: ' + name;
+            };
+            const exclaim = function(statement) {
+                return statement.toUpperCase() + '!';
+            };
+            const welcome = functionComposer(greet, exclaim);
             assets.equal(welcome('moe'), 'hi: MOE!');
-        })
-    })
+        });
+    });
     describe('Array', () => {
-        const arr =  [-1, 1, 3, 5, 8, 9];
+        const arr = [-1, 1, 3, 5, 8, 9];
         describe('apply', ()=> {
             it('max', () => {
                 assets.equal(MyArray.maxApply(arr), 9);
-            })
+            });
             it('min', () => {
                 assets.equal(MyArray.minApply(arr), -1);
             });
         });
         describe('loop', () => {
-           
             it('max', () => {
                 assets.equal(MyArray.maxLoop(arr), 9);
-            })
+            });
             it('min', () => {
                 assets.equal(MyArray.minLoop(arr), -1);
             });
         });
         it('difference', () => {
-            assets.equal(MyArray.differenceMaxAndMin(arr), 10)
-        })
+            assets.equal(MyArray.differenceMaxAndMin(arr), 10);
+        });
     });
-})
+});
