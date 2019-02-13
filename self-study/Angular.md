@@ -1,6 +1,7 @@
 # Содержание
 
 - [Уроки](#Уроки)
+- [Lifecycle](#Lifecycle)
 
 ## Уроки
 
@@ -25,7 +26,11 @@
 
 1. Быстрый старт:
 2. Начало работы:
-    - [Egghead - get started - Eng.][AEggheadAngularJS]
+    - [Egghead - get started - 2017 - Eng.][AEggheadAngularJS]
 3. Оффлайн
 
 [AEggheadAngularJS]: https://egghead.io/lessons/angularjs-introduction-to-building-an-angularjs-app
+
+## Lifecycle
+
+- ngOnInit -
