@@ -1,0 +1,72 @@
+    
+# Pull Requests for GitHub repository settings https://github.com/apps/settings
+repository:
+  # A short description of the repository that will show up on GitHub
+  description: 'Вопросы на собесах и полезные ссылки'
+
+  # A URL with more information about the repository
+  homepage: https://github.com/litwin90/junior-frontend-developer-interview-questions
+
+  # Either `true` to enable issues for this repository, `false` to disable them.
+  has_issues: true
+
+  # Either `true` to enable the wiki for this repository, `false` to disable it.
+  has_wiki: false
+
+  # Either `true` to enable downloads for this repository, `false` to disable them.
+  has_downloads: false
+
+  # Updates the default branch for this repository.
+  default_branch: master
+
+  # Either `true` to allow squash-merging pull requests, or `false` to prevent
+  # squash-merging.
+  allow_squash_merge: true
+
+  # Either `true` to allow merging pull requests with a merge commit, or `false`
+  # to prevent merging pull requests with merge commits.
+  allow_merge_commit: true
+
+  # Either `true` to allow rebase-merging pull requests, or `false` to prevent
+  # rebase-merging.
+  allow_rebase_merge: true
+
+# Labels: define labels for Issues and Pull Requests
+# Colors and idea are from https://github.com/yoshuawuyts/github-standard-labels
+# and http://issuelabeling.com/
+labels:
+  - name: "Priority: High"
+    color: FF0000
+  - name: "Priority: Medium"
+    color: FF8080
+  - name: "Priority: Low"
+    color: FFE6E6
+  - name: "Type: Bug"
+    color: 0000FF
+  - name: "Type: Feature"
+    color: 4040FF
+  - name: "Type: Maintenance"
+    color: 8080FF
+  - name: "Type: Question"
+    color: BFBFFF
+  - name: "Type: CI"
+    color: BFBFFF
+  - name: "Type: Documentation"
+    color: E6E6FF
+  - name: "Type: Test"
+    color: 8080FF
+  - name: "Status: Available"
+    color: 60BF60
+  - name: "Status: Blocked"
+    color: 008000
+  - name: "Status: In Progress"
+    color: 60BF60
+  - name: "Status: On Hold"
+    color: A8E0A8
+  - name: "Status: Pending"
+    color: 0E8C0E
+  - name: "Status: Rejected"
+    color: DAF2DA
+# Add areas by using the following template
+#  - name: "Area: API
+#    color: 1d76db
