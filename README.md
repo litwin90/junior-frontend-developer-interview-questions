@@ -2,6 +2,7 @@
 
 ## Структура
 
+- [Полезные ссылки][links]
 - [Вопросы на собеседования][questions]
 - Самостоятельное изучение
   - [Базовые вещи][lecture-base]
@@ -16,6 +17,7 @@
   - [Полифилы][practics-polyfills]
   - [Сортировки][practics-sorted]
 
+[links]: ./src/links.md
 [questions]: ./questions-junior.md
 [lecture-base]: ./src/lecture/Base.md
 [lecture-dom]: ./src/lecture/DOM-CSS.md
