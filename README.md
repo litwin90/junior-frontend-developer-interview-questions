@@ -17,7 +17,7 @@
   - [Полифилы][practics-polyfills]
   - [Сортировки][practics-sorted]
 
-[links]: ./src/links.md
+[links]: ./src/LINKS.md
 [questions]: ./questions-junior.md
 [lecture-base]: ./src/lecture/Base.md
 [lecture-dom]: ./src/lecture/DOM-CSS.md
