@@ -1,5 +1,93 @@
 # CoreJS
 
+## Arrays
+
+- Array literals  
+    В JS литерал массива - это спиcок выражений, каждое из которых представляет элемент массива, заключенный в пару квадратных скобок. Когда массив создается используя литерал он инициализируется указанными значениями, а его длинна устанавливается равной их колличеству
+    Create literal:
+    ```
+        let a = [1, 2, 3, {}, 'string', ['other array'], () => {}]
+
+        let b =  [0, , , , 4] // [0, undefined, undefined, undefined, 4]
+    ```
+- Несколько способов создания массивов  
+    ```
+        let a = [];
+        let b = new Array(1); // [undefined]
+        let c = new Array(1,2); // [1,2]
+        let d = Array.from('foo'); // ['f', 'o', 'o']
+        
+        Array.from: 
+        let s = new Set(['foo', window]); 
+        let e = Array.from(s); // ['foo', window]
+
+        let f = Array.from([1, 2, 3], x => x + x); // [2, 4, 6]
+
+        let g = Array.from({ length: 5 }, (v, k) => k); // [0, 1, 2, 3, 4]
+
+        Array.of:  
+        Array.of(1);         // [1]
+        Array.of(1, 2, 3);   // [1, 2, 3]
+        Array.of(undefined); // [undefined]
+    ```
+- Array.length   
+    Cвойство length объекта, который является экземпляром типа Array , устанавливает или возвращает число элементов этого массива c числовыми индексами
+    ```
+        let a = [1,2,3,4,5];
+        a.length === 5; //true
+        a.length = 0; // a = []
+        a.length = 2; // a = [undefined, undefined]
+
+        let b = []; // b.length = 0
+        b.soomeProp = 'someProp'; // b.length = 0
+    ```
+
+- links:  
+    https://learn.javascript.ru/array  
+    https://learn.javascript.ru/array-methods
+    https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/length
+    https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array#Relationship_between_length_and_numerical_properties  
+***
+## Objects  
+- literal 
+    ```
+        let a = {
+            prop1: 1,
+            'prop 2': 2,
+        };
+
+        Вычисляемые свойства:
+        a.prop1 = 11;
+        a['prop 2'] = 12;
+
+        let i = 0;
+        let b = {
+            ['prop' + ++i]: i,
+            ['prop' + ++i]: i,
+        }; // {prop1: 1, prop2: 2}
+
+        let d = {
+            [++i]: i,
+            [++i]: i,
+        }; // {3: 3, 4: 4}
+    ```
+- способы создания объектов: 
+    ```
+        let a = {
+            prop1: 1,
+            'prop 2': 2,
+        };
+
+        let Constructor = function() {
+            this.prop1 = '1'
+        }
+        let c = new Constructor(); // Constructor{prop1: 1}
+        let d = Object.create(prototype);
+    ```
+- links:  
+    https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Object_initializer https://learn.javascript.ru/object
+
+*** 
 - use strict
   - режим полного соответствия новому стандарту
     с выходом новых версий языка появились дополнения,
@@ -33,44 +121,33 @@
   - { a: 1 } == { a: 2 }
 - типы данных:
   - 7 типов данных:
-  - object
-  - string
-  - number
-  - boolean
-  - null
-  - undefined
-  - symbol
+    - object
+    - string
+    - number
+    - boolean
+    - null
+    - undefined
+    - symbol
   - typeOf
-  - {}  
-    Object
-    - function
-    function  
-    - array  
-    Object  
-    - null  
-    Object  
-    - new String/Boolean/Number  
-    Object  
-    - undefined  
-    undefined  
-    - true
-    boolean  
-    - "Текст"  
-    string  
-    - alert  
-    function  
-    - []  
-    object  
-    - new Date  
-    object
+    - {} - Object
+    - function - function  
+    - array - Object  
+    - null - Object  
+    - new String/Boolean/Number - Object  
+    - undefined - undefined  
+    - true - boolean  
+    - "Текст" - string  
+    - alert - function  
+    - [] - object  
+    - new Date - object
 - [[Class]], определени типа объекта
-    это свойство в котором хранится информация о типе объекта или конструкторе(только для встроенных объектов)
+    это свойство в котором хранится информация о типе объекта или конструкторе(**только для встроенных объектов**)
 
-    ```javascript
-    const toString = {}.toString;
-    function getType(obj) {
-        return toString.call(obj).splice(...); => Date, Object, Array ...
-    }
+    ```
+        const toString = {}.toString;
+        function getType(obj) {
+            return toString.call(obj).splice(...); => Date, Object, Array ...
+        }
     ```
 
 - instanceof  
