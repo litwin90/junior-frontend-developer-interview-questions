@@ -555,25 +555,25 @@
     Предоставляет функционал для работы с асинхронным кодом. Если надо асинхронно выполниь код и по завершении что то сделать еще:
 
     ```javascript
-    const myPromice = new Promice((resolve, reject) => {
+    const myPromise = new Promise((resolve, reject) => {
         ... do some async code
         resolve(result);
         reject(error);
     })
-    myPromice.then(result => {
+    myPromise.then(result => {
         ... do smth ...
-        return otherResult; -- create new Promice
+        return otherResult; -- create new Promise
     });
     ```
 
-- Promice.* static methods  
-    Promice.all(arr) - резолыится когда все промисы из arr выполнены
+- Promise.* static methods  
+    Promise.all(arr) - резолыится когда все промисы из arr выполнены
     результат - массив результатов каждого промиса  
     если один выполлнился с ошибкой => результат - ошибка этого промиса
     и остальные промисы игнорируются  
-    Promice.race(arr) - резолвится когда резолвится первый промис из массива с его результатом, остальные игнорируются  
-    Promice.resolve(value) - возвращает успешно выполненный промис с результатом value  
-    Promice.reject(error) - возвращает не успешно выполненный промис с результатом error
+    Promise.race(arr) - резолвится когда резолвится первый промис из массива с его результатом, остальные игнорируются  
+    Promise.resolve(value) - возвращает успешно выполненный промис с результатом value  
+    Promise.reject(error) - возвращает не успешно выполненный промис с результатом error
 - ES6 features  
     блочный скоуп  
     tempory dead zone  
@@ -589,7 +589,7 @@
     `${ somevalue }`  
     Set, Map  
     Class  
-    promice  
+    promise  
 - ES6 modules export
     1) export const a = 1;
     2) const a = 1;
